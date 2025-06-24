@@ -25,7 +25,7 @@ namespace CretaceousClient.Models
 
     public static Animal GetDetails(int id)
     {
-      var apiCallTask = ApiHelper.Get(Id);
+      var apiCallTask = ApiHelper.Get(id);
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
