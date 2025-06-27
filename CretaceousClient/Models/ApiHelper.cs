@@ -37,5 +37,13 @@ namespace CretaceousClient.Models
       request.AddBody(newAnimal);
       await client.PutAsync(request);
     }
+
+    public static async void Delete(int id)
+    {
+      RestClient client = new RestClient("http://localhost:5000/");
+      RestRequest request = new RestRequest($"api/animals/{id}", Method.Delete);
+      request.AddHeader("Content-Type", "application/json");
+      await client.DeleteAsync(request);
+    }
   }
 }
